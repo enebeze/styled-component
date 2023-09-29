@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'
 
-export default function App() {
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { Home } from './src/screens/home'
+import { ThemeProvider } from 'styled-components/native'
+import { TThemes } from './src/theme/styled'
+import { Themes } from './src/theme/themes'
+
+const Stack = createNativeStackNavigator()
+
+const App = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name='Home' component={Home} />
+  </Stack.Navigator>
+)
+
+export default function MyApp() {
+  const theme: TThemes = 'light'
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer>
+      <ThemeProvider theme={Themes[theme]}>
+        <App />
+      </ThemeProvider>
+    </NavigationContainer>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
