@@ -1,15 +1,15 @@
 import styled from 'styled-components/native'
 
+import { Text } from '../Text'
+
 export const Container = styled.TouchableOpacity`
-  width: '100%';
+  width: 100%;
   border-radius: 10px;
   background: ${(props) => props.theme.colors.secondary};
 `
-export const Text = styled.Text`
-  color: ${(props) => props.theme.colors.primary};
+export const TextButton = styled(Text)`
   text-align: center;
-  font-size: 16px;
   font-weight: 600;
-  line-height: 24px;
   padding: 10px;
+  color: ${(props) => props.theme.colors.primary};
 `
