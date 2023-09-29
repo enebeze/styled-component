@@ -2,7 +2,6 @@ import { DefaultTheme } from 'styled-components/native'
 import { Colors } from './colors'
 import { TThemes } from './styled'
 
-// themes.ts
 const LightTheme: DefaultTheme = {
   margin: 24,
   padding: 24,
